@@ -96,7 +96,7 @@
     <Compile Include="Assets\LeanTween\Framework\LeanTest.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTween.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTweenExt.cs" />
-    <Compile Include="Assets\Scipts\GameManager.cs" />
+    <Compile Include="Assets\Scipts\GameMng.cs" />
     <Compile Include="Assets\Scipts\Number.cs" />
     <Compile Include="Assets\Scipts\NumberFunc.cs" />
     <Compile Include="Assets\Scipts\TimerSlider.cs" />

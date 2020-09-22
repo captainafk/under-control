@@ -26,6 +26,10 @@ public class NumberFunc : MonoBehaviour
     // The number player wants to achieve
     private TMPro.TextMeshProUGUI targetTextObj;
 
+    // Boundaries of the target range
+    private int minRange = -10;
+    private int maxRange = 20;
+
     private void Start()
     {
         // Consturct a number object with the number in its text
@@ -42,6 +46,9 @@ public class NumberFunc : MonoBehaviour
         // Assign result and target text objects
         resultTextObj = result.GetComponentsInChildren<TextMeshProUGUI>()[1];
         targetTextObj = target.GetComponentsInChildren<TextMeshProUGUI>()[1];
+
+        // Initialize target number with something between -10 and 20
+        targetTextObj.text = UnityEngine.Random.Range(minRange, maxRange).ToString();
     }
 
     private void Update()
@@ -75,6 +82,14 @@ public class NumberFunc : MonoBehaviour
         else if (timeSlider.value < 10.0f && interactOnlyOnce == 6)
         {
             interactOnlyOnce = 1;
+        }
+
+        // Asign a new target if the target is met
+        if (resultTextObj.text == targetTextObj.text)
+        {
+            targetTextObj.text = UnityEngine.Random.Range(minRange, maxRange).ToString();
+            minRange -= 5;
+            maxRange += 5;
         }
     }
 
