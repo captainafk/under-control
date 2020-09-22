@@ -9,29 +9,77 @@ using UnityEngine.UI;
 public class NumberFunc : MonoBehaviour
 {
     private int numberValue;
-
-    // Slider value -> Number Value
-    // 10 -> 1
-    // 30 -> 2
-    // 50 -> 3
-    // 70 -> 4
-    // 90 -> 5
+    private UnderControl.Number number;
     public Slider timeSlider;
-    void Start()
+
+    // An integer for making sure an interaction happens only once
+    private static int interactOnlyOnce;
+
+    // Result and Target gameobjects in the scene
+    public GameObject result;
+
+    public GameObject target;
+
+    // The number player interacts
+    private TMPro.TextMeshProUGUI resultTextObj;
+
+    // The number player wants to achieve
+    private TMPro.TextMeshProUGUI targetTextObj;
+
+    private void Start()
     {
         // Consturct a number object with the number in its text
         TextMeshProUGUI text = gameObject.GetComponent<TextMeshProUGUI>();
         numberValue = Convert.ToInt32(text.text);
-        UnderControl.Number number = new UnderControl.Number(numberValue);
+        number = new UnderControl.Number(numberValue);
 
         // Initialize the number with active summation
         number.ActivateOperation(UnderControl.Number.Operations.Summation);
 
-        
+        // Initialize interactOnlyOnce with 1
+        interactOnlyOnce = 1;
+
+        // Assign result and target text objects
+        resultTextObj = result.GetComponentsInChildren<TextMeshProUGUI>()[1];
+        targetTextObj = target.GetComponentsInChildren<TextMeshProUGUI>()[1];
     }
 
-    void Update()
+    private void Update()
     {
-        
+        // Interact with result when slider hits
+        if (timeSlider.value > 10.0f && interactOnlyOnce == 1 && numberValue == 1)
+        {
+            resultTextObj.text = number.InteractWithResult(Convert.ToInt32(resultTextObj.text)).ToString();
+            interactOnlyOnce++;
+        }
+        else if (timeSlider.value > 30.0f && interactOnlyOnce == 2 && numberValue == 2)
+        {
+            resultTextObj.text = number.InteractWithResult(Convert.ToInt32(resultTextObj.text)).ToString();
+            interactOnlyOnce++;
+        }
+        else if (timeSlider.value > 50.0f && interactOnlyOnce == 3 && numberValue == 3)
+        {
+            resultTextObj.text = number.InteractWithResult(Convert.ToInt32(resultTextObj.text)).ToString();
+            interactOnlyOnce++;
+        }
+        else if (timeSlider.value > 70.0f && interactOnlyOnce == 4 && numberValue == 4)
+        {
+            resultTextObj.text = number.InteractWithResult(Convert.ToInt32(resultTextObj.text)).ToString();
+            interactOnlyOnce++;
+        }
+        else if (timeSlider.value > 90.0f && interactOnlyOnce == 5 && numberValue == 5)
+        {
+            resultTextObj.text = number.InteractWithResult(Convert.ToInt32(resultTextObj.text)).ToString();
+            interactOnlyOnce++;
+        }
+        else if (timeSlider.value < 10.0f && interactOnlyOnce == 6)
+        {
+            interactOnlyOnce = 1;
+        }
+    }
+
+    public void ActivateOperation(int opIndex)
+    {
+        number.ActivateOperation((UnderControl.Number.Operations)opIndex);
     }
 }
