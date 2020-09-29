@@ -63,6 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AllIn1SpriteShader\Editor\AllIn1ShaderScriptEditor.cs" />
+    <Compile Include="Assets\AllIn1SpriteShader\Editor\AllIn1SpriteShader.cs" />
+    <Compile Include="Assets\AllIn1SpriteShader\Editor\AllIn1SpriteShaderStencil.cs" />
     <Compile Include="Assets\LeanTween\Editor\LeanTweenDocumentationEditor.cs" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>D:/Users/Pc/Desktop/Unity Projects/under-control/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
