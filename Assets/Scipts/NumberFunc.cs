@@ -17,7 +17,6 @@ public class NumberFunc : MonoBehaviour
 
     // Result and Target gameobjects in the scene
     public GameObject result;
-
     public GameObject target;
 
     // The number player interacts

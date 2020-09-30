@@ -74,7 +74,6 @@ namespace UnderControl
             }
             else if ((int)Operations.Division == activeOp)
             {
-                // TODO: Check if this is working as intended
                 // Integer division
                 resultNumber /= numberValue;
             }
