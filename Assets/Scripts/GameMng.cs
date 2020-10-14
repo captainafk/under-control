@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class GameMng : MonoBehaviour
 {
-    // TODO: Implement change button color on click
     public void ActivatePlusButton(GameObject button)
     {
         button.GetComponent<Image>().sprite = Resources.Load<Sprite>("plus3");
@@ -47,12 +46,10 @@ public class GameMng : MonoBehaviour
         button.GetComponent<Image>().sprite = Resources.Load<Sprite>("div1");
     }
 
-    // Start is called before the first frame update
     private void Start()
     {
     }
 
-    // Update is called once per frame
     private void Update()
     {
     }
