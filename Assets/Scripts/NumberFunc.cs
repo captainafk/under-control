@@ -17,16 +17,18 @@ public class NumberFunc : MonoBehaviour
 
     // Result and Target gameobjects in the scene
     public GameObject result;
+
     public GameObject target;
 
     // The number player interacts
-    private TMPro.TextMeshProUGUI resultTextObj;
+    private TextMeshProUGUI resultTextObj;
 
     // The number player wants to achieve
-    private TMPro.TextMeshProUGUI targetTextObj;
+    private TextMeshProUGUI targetTextObj;
 
     // Boundaries of the target range
     private int minRange = -10;
+
     private int maxRange = 20;
 
     private void Start()
@@ -89,6 +91,7 @@ public class NumberFunc : MonoBehaviour
             targetTextObj.text = UnityEngine.Random.Range(minRange, maxRange).ToString();
             minRange -= 5;
             maxRange += 5;
+            ScoreObject.score++;
         }
     }
 

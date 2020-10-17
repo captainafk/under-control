@@ -21,7 +21,7 @@ public class TimerSlider : MonoBehaviour
         if (slider.value >= 100.0f)
         {
             slider.value = 0.0f;
-            sliderSpeed += 0.1f;
+            sliderSpeed += 0.2f;
         }
     }
 }
